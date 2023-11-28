@@ -16,23 +16,12 @@ import seaborn as sns
 st.title('Analisis Data Order Product')
 
 # side tab menu
-tab1, tab2, tab3 = st.tabs(["Rangkuman Data", "Visualisasi 1", "Visualisasi 2"])
+tab2, tab3 = st.tabs(["Visualisasi 1", "Visualisasi 2"])
 
 # section untuk menganalisis statistik data
 
 all_trx_df = pd.read_csv("all_trx_df.csv")
 
-# tab 1
-
-with tab1:
-    st.header("Rangkuman data yang dianalisis")
-    
-    st.write("""
-        - Kategori produk mana saja yang memiliki jumlah pemesanan paling sedikit dan paling banyak?
-        - Apa saja kategori produk dengan rating review di bawah rata-rata?
-    """)
-    st.title("Dataset yang digunakan")
-    st.write(all_trx_df)
 
 with tab2:
     st.header("Visualisasi 1")
@@ -64,24 +53,6 @@ with tab2:
     
     plt.suptitle("Best and Worst Performing Category Product by Number of Order", fontsize=20)
     st.pyplot(fig)
-
-    st.write("Kesimpulan dari Kategori Produk dengan jumlah pemesanan paling sedikit dan paling banyak")
-
-    st.write("""
-        1. Terdapat 5 kategori produk yang termasuk dalam kategori produk dengan jumlah penjualan di atas 100 order. Di antaranya:
-            - agro_industria_e_comercio
-            - alimentos
-            - alimentos_bebidas
-            - artes
-            - artes_e_artesanato
-        2. Terdapat 5 kategori produk yang termasuk dalam kategori produk dengan jumlah penjualan di kurang dari 12 order. Di antaranya:
-            - serugos_e_servicos
-            - fashion_roupa_infanto_juvenil
-            - pc_gamer
-            - cds_dvds_musicais
-            - la_cuisine
-        3. Dapat disimpulkan untuk kategori produk dengan pemesanan rendah dapat menjadi bahan evaluasi bagi perusahaan untuk meningkatkan penjualan baik dari sisi kualitas produk
-    """)
 
 with tab3:
     st.header("Visualisasi 2")
